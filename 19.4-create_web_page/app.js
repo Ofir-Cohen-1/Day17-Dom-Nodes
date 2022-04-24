@@ -1,4 +1,4 @@
-// Navbar
+//! Navbar
 const nav = document.createElement("nav");
 document.body.appendChild(nav);
 const ul = document.createElement("ul");
@@ -29,61 +29,59 @@ for (let i = 0; i < contentOfNavbar.length; i++) {
 
 ul.setAttribute("style", "display: flex;");
 ul.style.margin = "0";
-nav.style.background = "#7393B3";
+nav.style.background = "#6082B6";
 
-// add header
+//! add header
 const header = document.createElement("h1");
 document.body.appendChild(header);
 header.textContent = "Welcome to my Website";
 header.style.textAlign = "center";
 header.style.margin = "80px 0";
 
-// add image
+//! add image
 const imgContainer = document.createElement("div");
 document.body.appendChild(imgContainer);
 const image = document.createElement("img");
-image.src = "./XSdtyyG.png";
+image.src = "https://www.vinu.edu/documents/10181/5193090/5004.jpg/28cf052a-9ecf-eeb3-1928-e8afc9b22670?version=1.0&t=1579102461703&download=true";
 imgContainer.appendChild(image);
 
 image.style.width = "600px";
 imgContainer.style.display = "flex";
 imgContainer.style.justifyContent = "center";
 
-// Read more:
-const subHeader = document.createElement("h2");
-document.body.appendChild(subHeader);
-subHeader.textContent =
-  "";
-subHeader.style.fontSize = "20px";
-subHeader.style.margin = "50px 40px";
-subHeader.style.textDecoration = "underline";
+//! footer
+const footer = document.createElement("footer");
+footer.style =
+  "background: #D3D3D3; max-width: 1335px; margin: 12rem auto 0 auto; padding: 0.3rem; border-radius: 10px; display: flex; flex-direction: column; align-items: center;";
+document.body.appendChild(footer);
 
-// links for ReadMore:
-const linksContainer = document.createElement("div");
-document.body.appendChild(linksContainer);
-linksContainer.style.display = "flex";
+const footerHeader = document.createElement("h2");
+footerHeader.innerText = "Social Media";
+footer.appendChild(footerHeader);
 
-// Could use an array of objects, instead of two arrays.
-const linksNamesArr = [
+const iconsContainer = document.createElement("div");
+footer.appendChild(iconsContainer);
 
-];
-const linksArr = [
+//! font awesome
+const script = document.createElement("script");
+script.src = "https://kit.fontawesome.com/5c4607dc13.js";
+script.crossorigin = "anonymous";
+document.head.appendChild(script);
 
-];
-
-for (let i = 0; i < linksNamesArr.length; i++) {
-  linksContainer.appendChild(document.createElement("a"));
-}
-
-const allReadMoreLinks = linksContainer.querySelectorAll("a");
-
-for (let i = 0; i < linksNamesArr.length; i++) {
-  allReadMoreLinks[i].textContent = linksNamesArr[i];
-  allReadMoreLinks[i].href = linksArr[i];
-
-  allReadMoreLinks[i].setAttribute(
-    "style",
-    "list-style-type: none; margin: 10px 50px; font-size: 15px; color: #333; text-decoration: none; font-weight: 500"
-  );
-  allATags[i].href = "#";
+//! the 3 media icons
+for (let i = 0; i < 3; i++) {
+  const icons = [
+    "fab fa-linkedin",
+    "fab fa-instagram",
+    "fab fa-facebook-square",
+  ];
+  const aFooter = document.createElement("a");
+  aFooter.style = "margin: 0 10px;";
+  aFooter.href = "";
+  iconsContainer.appendChild(aFooter);
+  const icon = document.createElement("i");
+  icon.style =
+    "color: #0A66C2; font-size: 2rem; transition: all 0.3s ease-in-out;";
+  icon.classList = icons[i];
+  aFooter.appendChild(icon);
 }
